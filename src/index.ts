@@ -1,6 +1,8 @@
+import { createStore, createEvent, createEffect, sample, attach } from 'effector'
+
 export const createMorpher = ({
-  from,
-  to,
+  from = createStore(null),
+  to = createStore(null),
   duration,
   easing = "ease-in",
 }: {
@@ -102,5 +104,5 @@ export const createMorpher = ({
     target: attach({ source: $to, effect: hideEl }),
   });
 
-  return { morphIn, morphOut };
+  return { $from: from, $to: to, morphIn, morphOut };
 };
