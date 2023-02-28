@@ -1,4 +1,4 @@
-export const createMorphling = ({
+export const createMorpher = ({
   from,
   to,
   duration,
